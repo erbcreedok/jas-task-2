@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState } from 'react'
-import { isEven } from './functions';
+import { fibonacci } from './functions';
 
 function App() {
   const [number, setNumber] = useState(null)
@@ -15,7 +15,7 @@ function App() {
         <input onChange={handleChange} type="number" />
       </div>
       <div>
-        { isEven(number) ? 'Четное' : 'Не четное'}
+        {fibonacci(number)}
       </div>
     </div>
   )
