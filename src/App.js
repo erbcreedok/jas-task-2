@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import { tableData } from './data'
 
 function App() {
+  
+  const data = tableData.filter((item) => item.instalment)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <table>
+      {data.map((item, index) => (
+        <tr key={index}>
+          <td>{index}</td>
+          <td>{item.name}</td>
+          <td>{item.price}</td>
+          <td>{item.count}</td>
+          <td>{item.instalment ? 'v' : ''}</td>
+        </tr>
+      ))}
+    </table>
   );
 }
 
